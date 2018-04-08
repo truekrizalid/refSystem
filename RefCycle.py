@@ -23,7 +23,7 @@ class refCycle(object):
     def wc(self):
         s1 = CP.PropsSI("S","T",self.Tsuct,"P",self.Pe(),self.refType)
         h2s =CP.PropsSI("H","S",s1,"P",self.Pk(),self.refType)
-        hsuc = CP.PropsSI("H","T",self.Tsuct,"P",self.Pe(),self.refType)
+        hsuc = CP.PropsSI("H","T",self.Tsuct,"P",self.Pe(),self.refType) #等效h1 ，使用不同的变量名
         return h2s-hsuc
     def cycleCOP(self):
         return self.qe()/self.wc()
