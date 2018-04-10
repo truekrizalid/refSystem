@@ -21,9 +21,9 @@ class compressor(object):
         if self.model == "VTX1111YA":
             volEfficiency =0.93751 + 0.02681 * (N / 4500.0) - 0.02108 * Pr **(1.0/ 1.091)
         elif self.model == "VTH1113YA":
-            volEfficiency = 0.93942 - 0.00319 * (N / 4500) - 0.02119* Pr **(1.0/ 1.091)
+            volEfficiency = 0.93942 - 0.00319 * (N / 4500.0) - 0.02119* Pr **(1.0/ 1.091)
         elif self.model == "VNX1116Y":
-            volEfficiency = 0.92022 - 0.06544 * (N / 4500) - 0.01814 * Pr **(1.0/ 1.091)
+            volEfficiency = 0.92022 - 0.06544 * (N / 4500.0) - 0.01814 * Pr **(1.0/ 1.091)
         else:
             raise ValueError
         return volEfficiency
