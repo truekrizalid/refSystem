@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 from CoolProp.CoolProp import PropsSI
 class compressor(object):
     def __init__(self,compModel):
