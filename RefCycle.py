@@ -4,7 +4,7 @@ import CoolProp.CoolProp as CP
 class refCycle(object):
     def __init__(self,refrigerantName, suctionTemp,evaTemp,condTemp,subcoolTemp):
         self.refType = refrigerantName
-        self.Tsuct = suctionTemp +273.15
+        self.Tsuct = suctionTemp +273.15   #由摄氏温度转换为绝对温度
         self.Te = evaTemp + 273.15
         self.Tk = condTemp +273.15
         self.Tsub = subcoolTemp + 273.15
