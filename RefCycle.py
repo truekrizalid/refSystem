@@ -1,12 +1,13 @@
+# -*- coding: UTF-8 -*-
 import CoolProp.CoolProp as CP
 
 class refCycle(object):
     def __init__(self,refrigerantName, suctionTemp,evaTemp,condTemp,subcoolTemp):
         self.refType = refrigerantName
-        self.Tsuct = suctionTemp
-        self.Te = evaTemp
-        self.Tk = condTemp
-        self.Tsub = subcoolTemp
+        self.Tsuct = suctionTemp +273.15
+        self.Te = evaTemp + 273.15
+        self.Tk = condTemp +273.15
+        self.Tsub = subcoolTemp + 273.15
     def Pk(self):
         #evaP = CP.PropsSI('P','T',evapTemp,'Q',1,ref)
         return CP.PropsSI("P",'T',self.Tk,'Q',1,self.refType)
