@@ -88,12 +88,11 @@ class compressor(object):
             + p9 * Te * fr + p10 * Tk * fr + p11 * Te **2 * fr + p12 * Te * fr **2 + p13 * Tk **2 * fr + p14 * Tk * fr **2 \
             + p15 * Te * Tk * fr
         return compEfficiency
+    def mf(self,N,Te,Tk,Ts):
+        suctP = PropsSI("P","T",Te+273.15,"Q",1,self.refType)
+        massFlow = self.volEff(Te,Tk,N)*self.pistVol*N*PropsSI("D","T",Ts+273.15,"P",suctP,self.refType)/60.0
+        return massFlow
 
     
- # test code here   
-cmp1 = compressor("VTX1111YA")
-print cmp1.pistVol
-print cmp1.volEff(-23.3,54.4,1500)
-print cmp1.isoEff(-23.3,54.4,1500)       
-#test code end
+ 
             
