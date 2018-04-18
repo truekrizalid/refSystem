@@ -28,4 +28,12 @@ class refCycle(object):
         return h2s-hsuc
     def cycleCOP(self):
         return self.qe()/self.wc()
+    def qk(self,Tdis):
+        hdis= CP.PropsSI("H","T",Tdis+273.15,"P",self.Pk(),self.refType)
+        h3 =CP.PropsSI("H","T",self.Tsub,"P",self.Pk(),self.refType)
+        return hdis-h3
+    def h2_1(self,Tdis):
+        h1 = CP.PropsSI("H","T",self.Tsuct,"P",self.Pe(),self.refType)
+        hdis = CP.PropsSI("H","T",Tdis+273.15,"P",self.Pk(),self.refType)
+        return hdis-h1
     
