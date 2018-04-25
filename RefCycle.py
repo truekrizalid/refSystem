@@ -36,4 +36,9 @@ class refCycle(object):
         h1 = CP.PropsSI("H","T",self.Tsuct,"P",self.Pe(),self.refType)
         hdis = CP.PropsSI("H","T",Tdis+273.15,"P",self.Pk(),self.refType)
         return hdis-h1
+    def T2s(self):
+        s1 = CP.PropsSI("S","T",self.Tsuct,"P",self.Pe(),self.refType)
+        return CP.PropsSI("T","S",s1,"P",self.Pk(),self.refType)-273.15   #转换为摄氏温度
+    def denSuction(self):
+        return CP.PropsSI("D","T",self.Tsuct,"P",self.Pe(),self.refType)
     
