@@ -82,8 +82,7 @@ class compressor(object):
             p15 = 0.00002
         else :
             raise ValueError
-        #15系数模型拟合压缩机等熵压缩效率，3000rpm以下数据拟合结果较好，3000rpm以上拟合结果偏低，导致计算出来的压缩机输入功率
-        #比实测功率高10%以上    
+        #15系数模型拟合压缩机等熵压缩效率  
         compEfficiency = p1 + p2 * Te + p3 * Tk + p4 * fr + p5 * Te**2 + p6 * Tk**2 + p7 * fr **2 + p8 * Te * Tk \
             + p9 * Te * fr + p10 * Tk * fr + p11 * Te **2 * fr + p12 * Te * fr **2 + p13 * Tk **2 * fr + p14 * Tk * fr **2 \
             + p15 * Te * Tk * fr
